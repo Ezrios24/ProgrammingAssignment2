@@ -1,7 +1,11 @@
-## Put comments here that give an overall description of what your
-## functions do
+## Set of functions that cache the inverse of a matrix
+## Usage:  Pass the result of a makeCacheMatrix call to cacheSolve
 
-## Write a short comment describing this function
+## Function that set the matrix and the inverse in an enviroment
+## PARAMETERS
+## x is an invertible matrix
+## x = makeCacheMatrix(matrix(rnorm(16), 4, 4))
+## x$set(matrix(rnorm(25), 5, 5))
 
 makeCacheMatrix <- function(x = matrix()) {
         ## Initialize objects
@@ -23,7 +27,13 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## Compute and cache the inverse of a matrix
+## PARAMETERS
+## x is the result from the previous makeCacheMatrix call
+## ... aditional arguments to pass to solve function
+## USAGE 
+## x = makeCacheMatrix(matrix(rnorm(16), 4, 4))
+## cachesolve(x)
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
